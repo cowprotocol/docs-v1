@@ -16,6 +16,6 @@ Ring trades are a form of Coincidence of Wants that not only maximize the liquid
 
 ![](../.gitbook/assets/Cow\_Ring\_trade.png)
 
-_In our example, we have 3 different people, Alice is trying to sell DAI -OWL, Daniel is trying to sell OWL-USDC, and Bob & Carry are trying to sell USDC-DAI. Instead of having all of them trading against multiple liquidity pools to get the liquidity for their trade, the protocol forms a ring matching the three traders directly amongst each other._
+_In our example, we have 3 different people, Alice is trying to sell DAI -OWL, Daniel is trying to sell OWL-USDC, and Bob & Caryl are trying to sell USDC-DAI. Instead of having all of them trading against multiple liquidity pools to get the liquidity for their trade, the protocol forms a ring matching the three traders directly amongst each other._
 
 Overall, by leveraging Batch Auctions which are tailored for Coincidence of Wants, CoW Protocol is able to give better prices for trades because batching transactions results in a lower spread, as well as a much more optimized transaction management for the user.
