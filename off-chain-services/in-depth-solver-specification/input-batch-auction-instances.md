@@ -60,7 +60,7 @@ The "orders" key maps to a dictionary containing the set of user and liquidity o
   * `"amount"`: a stringified integer denoting the maximum fee amount;
   * `"token"`: the token id of the token in which the fee amount is denominated in. It always coincides with the sell token.
 * `"cost"`:
-  * `"amount"`: a stringified integer denoting the the cost amount; we clarify that this is only an estimate of the cost an order might incur if executed, that is provided to help guide the optimization procedure a solver might use. For the evaluation of the objective value of a proposed solution, this quantity is ignored and the total cost incurred by a solution is computed via a simulation (see [here](https://docs.cow.fi/off-chain-services/in-depth-solver-specification/the-batch-auction-optimization-problem#ranking-of-solutions) for more details).
+  * `"amount"`: a stringified integer denoting the cost amount; we clarify that this is only an estimate of the cost an order might incur if executed, that is provided to help guide the optimization procedure a solver might use. For the evaluation of the objective value of a proposed solution, this quantity is ignored and the total cost incurred by a solution is computed via a simulation (see [here](https://docs.cow.fi/off-chain-services/in-depth-solver-specification/the-batch-auction-optimization-problem#ranking-of-solutions) for more details).
   * `"token"`: the token id of the token in which the cost amount is denominated in. On Ethereum mainnet, it always coincides with WETH.
 * `"is_liquidity_order"`: a boolean that describes whether the order is a liquidity order.
 
