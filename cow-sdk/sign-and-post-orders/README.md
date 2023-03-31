@@ -12,4 +12,4 @@ Posting orders is a three steps process:
 2. **Sign the order**: Using off-chain signing or Meta-transactions
 3. **Post the signed order to the API**: So, the order becomes `OPEN`
 
-The next sections will guide you through the process of creating a valid order step by step. If you feel impatient and you want just a quick example, please out the the [Quick start example](https://github.com/cowprotocol/cow-sdk/blob/feature/readme-update/examples/cra/src/pages/quickStart/index.tsx).
+The next sections will guide you through the process of creating a valid order step by step. If you feel impatient and you want just a quick example, please out the the [Quick start example](https://github.com/cowprotocol/cow-sdk/blob/main/examples/cra/src/pages/quickStart/index.tsx).
