@@ -124,6 +124,6 @@ More info in [https://github.com/cowprotocol/subgraph](https://github.com/cowpro
 
 There’s currently open positions for CoW Protocol.
 
-If you are looking for new challenges and opportunities, consider our [Open Positions](https://cow.fi/jobs).
+If you are looking for new challenges and opportunities, consider our [Open Positions](https://cow.fi/jobs?utm_source=docs.cow.fi&utm_medium=web&utm_content=build-on-top-cow-join-link).
 
 \
