@@ -2,7 +2,7 @@
 
 In this section, we describe all the different components of the optimization problem that needs to be solved within each batch.
 
-## <mark style="color:blue;">User Orders</mark>
+## User Orders
 
 Suppose that there are $$\{1,2,...k\}$$ tokens. From a high-level perspective, we can define a user order as an _acceptance set_ $$S \subset \mathbb R^k$$ specifying the trades a user is willing to accept (where negative entries of a vector represent tokens sold, while positive entries represent tokens bought). So, for example, if $$k=2$$ and $$\begin{bmatrix} x \\-y \end{bmatrix}\in S$$ then a user is happy to receive _x_ units of token 1 in exchange for _y_ units of token 2 (note: this is all from the user's perspective and is therefore net of fees).
 
@@ -46,17 +46,17 @@ Again, the utility function is defined as
 
 where $$p(s)$$ is the price of the sell token relative to a numéraire and is externally provided. Also here, orders can be executed over multiple batches.
 
-## <mark style="color:blue;">Liquidity Orders</mark>
+## Liquidity Orders
 
 Liquidity orders are orders not submitted by users. They represent sources of liquidity that are available to a solver, for example, automated market makers or private liquidity pools. They look identical to user orders, in the sense that each liquidity order can be represented by an acceptance set $$L \subset \mathbb R^k$$. The main difference to user orders is that the utility function of a liquidity order is always zero.&#x20;
 
-## <mark style="color:blue;">Fees</mark>&#x20;
+## Fees&#x20;
 
 Each user order has an associated fee paid to the protocol. At a high level, these fees can be represented by a function that, for a given order $$S$$ maps all possible trades to a positive vector of tokens, that is $$f_S:S \rightarrow \mathbb R^k_+$$   with $$f_S(0)=0$$.
 
 From the practical viewpoint, for market fill-or-kill orders, the fee is always in the sell token and is pre-specified: it is an estimate of the cost of executing an order and is explicitly shown to the user before the order is submitted. Instead, (long-standing) limit orders are "feeless" from the user's perspective: users are guaranteed a limit price without specifying how fees will be calculated. For fill-or-kill limit orders, the protocol computes a fee each time such an order enters a batch auction, while for partially-fillable limit orders, solvers are the ones that need to propose a fee. In this latter case, the expectation is that this fee should equal the cost of execution of this trade in isolation. The fee of limit orders is again in the sell token.
 
-## <mark style="color:blue;">Solution</mark>
+## Solution
 
 Solvers propose solutions to the protocol, where a solution is a set of trades to execute. Formally, suppose that there are $$I$$ users and _J_ liquidity sources. A solution is a list of trades $$\{o_1, o_2, ...o_I, l_1, l_2, ..., l_J\}$$ one per user and one per liquidity source such that
 

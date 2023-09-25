@@ -8,7 +8,7 @@ The input batch is formatted in [JSON](https://www.json.org/json-en.html), descr
 
 Note: To avoid precision loss, some numerical literals are encoded as strings, referred below as _stringified_.
 
-## <mark style="color:blue;">Tokens</mark>
+## Tokens
 
 The "tokens" key lists all tokens that appear in some order or AMM in the batch. It is a dictionary, mapping the token id (the Smart Contract address of the token) to the following information:
 
@@ -70,7 +70,7 @@ Note that all three tokens above are accepted for internalization. An example of
 
 
 
-## <mark style="color:blue;">Orders</mark>
+## Orders
 
 The "orders" key maps to a dictionary containing the set of user and liquidity orders in the batch. Each entry in the dictionary maps an order id (an arbitrary string) to the following:
 
@@ -122,7 +122,7 @@ Regarding the tokens traded, the sell token is [USDC](https://etherscan.io/token
 
 On top of that, the user is willing to pay a fee of 163784016 / 10⁶ ≅ 163.784 USDC tokens, as specified by the `fee` entry. Finally, the estimated cost for this transaction is 8193880727499585 / 10¹⁸ ≅ 0.00819 [WETH](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2), as specified by the `cost` entry, where we used the fact that WETH has 18 decimals.
 
-## <mark style="color:blue;">AMMs</mark>
+## AMMs
 
 The "amms" key describes all the automated market makers that are made available for use by the Driver. This dictionary maps an AMM id to the current state (in the blockchain) of that AMM, which depends on the type of AMM. Currently, there are 4 different types of AMMs provided by the Driver:
 

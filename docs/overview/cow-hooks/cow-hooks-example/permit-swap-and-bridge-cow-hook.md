@@ -72,7 +72,7 @@ Now, we want to add a post-hook to bridge the funds that we receive from trading
 
 Unfortunately, bridging contracts aren't designed with this use-case in mind. In particular, the hooks are called from an unprivileged context (specifically, the settlement will "trampoline" the user-specified hooks over an intermediary contract as a security measure):
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../img/image.png" alt="" /><figcaption></figcaption></figure>
 
 The existing Gnosis Chain `Omnibridge` contract takes tokens for bridging from `msg.sender`, so we need to design an on-chain contract to temporarily hold the funds for the bridging process. Fortunately, this is very easy to do:
 

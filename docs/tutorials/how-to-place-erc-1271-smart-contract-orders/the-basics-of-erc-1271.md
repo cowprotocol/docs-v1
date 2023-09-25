@@ -8,7 +8,7 @@ The solution was to standardise a new form of on-chain signature verification fo
 
 
 
-<figure><img src="https://lh4.googleusercontent.com/jyTXFIF5mfZG8pZOIXx_4CKvi9XMrq39uR3RXgu_dLccgVVxfY43WgO2sJlJZe9JRn5V53Zfj857WmdBfef7shmtsNB86ui0goIPLCPvZlDKPUeHass7f7DOhBJlz3pc4dX6N7oxpvOm98DPGAPdGKUUQezQ-fD5tMf-ZzoU2C71pAiab_6xQymi2rIy" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh4.googleusercontent.com/jyTXFIF5mfZG8pZOIXx_4CKvi9XMrq39uR3RXgu_dLccgVVxfY43WgO2sJlJZe9JRn5V53Zfj857WmdBfef7shmtsNB86ui0goIPLCPvZlDKPUeHass7f7DOhBJlz3pc4dX6N7oxpvOm98DPGAPdGKUUQezQ-fD5tMf-ZzoU2C71pAiab_6xQymi2rIy" alt="" /><figcaption></figcaption></figure>
 
 
 
@@ -20,4 +20,4 @@ With respect to CoW Protocol orders, the flow now becomes:
 2. Like before, hash this structured data into a 32-byte digest
 3. Unlike before, call the `isValidSignature` on the Smart Contract signer instead of performing the usual ECDSA signature recovery and validation
 
-<figure><img src="https://lh3.googleusercontent.com/vDMQVWDF_1NhqK7a9JMaLL-0UF0AYHZHnhVGXwqopuNtujWbpOB55bXZJZgQfqVQWgQxWSfkLSzigJp8dRyFN41mH7qtzzNxO0YxA9mQamz8BMeVdSMgpqIQUWH91y5oHtjEDeyINE2oPWj7oB_Q-jmuQ6EzxagBsP68YipCjgHx-1YbILK5BI91AODS" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh3.googleusercontent.com/vDMQVWDF_1NhqK7a9JMaLL-0UF0AYHZHnhVGXwqopuNtujWbpOB55bXZJZgQfqVQWgQxWSfkLSzigJp8dRyFN41mH7qtzzNxO0YxA9mQamz8BMeVdSMgpqIQUWH91y5oHtjEDeyINE2oPWj7oB_Q-jmuQ6EzxagBsP68YipCjgHx-1YbILK5BI91AODS" alt="" /><figcaption></figcaption></figure>

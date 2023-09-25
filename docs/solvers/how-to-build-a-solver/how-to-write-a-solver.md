@@ -1,6 +1,6 @@
 # How to write a solver
 
-## This tutorial was fully composed by [<mark style="color:blue;">poolpitako</mark>](https://twitter.com/poolpitako), link to the original tutorial doc can be found [<mark style="color:blue;">here</mark>](https://hackmd.io/Qx3i17ZMRLSFFNyw0tn8sQ?view)
+## This tutorial was fully composed by [poolpitako](https://twitter.com/poolpitako), link to the original tutorial doc can be found [here](https://hackmd.io/Qx3i17ZMRLSFFNyw0tn8sQ?view)
 
 ### Idea <a href="#idea" id="idea"></a>
 
