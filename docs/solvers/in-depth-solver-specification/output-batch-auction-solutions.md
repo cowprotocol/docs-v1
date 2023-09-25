@@ -2,7 +2,7 @@
 
 The output is also formatted in JSON. We start with an example of how the simplest possible (i.e., empty) response looks like, and then describe the fields it contains.&#x20;
 
-#### <mark style="color:blue;">How a valid empty solution looks like</mark>
+#### How a valid empty solution looks like
 
 Here, we give an example of the simplest possible valid output, which corresponds to the empty solution, in order to showcase the required fields.\
 
@@ -19,7 +19,7 @@ Here, we give an example of the simplest possible valid output, which correspond
 }
 ```
 
-## <mark style="color:blue;">Executed orders</mark>
+## Executed orders
 
 The "orders" key contains all orders that were selected for execution, and it is a required field. It maps to a dictionary, mapping each order id to a copy of the corresponding order input data, but containing two additional keys that specify the executed buy and sell amount. An example entry is given below.
 
@@ -42,7 +42,7 @@ The "orders" key contains all orders that were selected for execution, and it is
 
 **Note for partially-fillable orders.** In the case of a partially-fillable order, solvers are also required to report a fee. This is due to the fact that the fraction of the order that will be executed is decided by the solver, so having a predetermined fee assigned to the order is not reasonable. For this reason, the "exec\_fee\_amount" entry cannot be null in the case of a partially fillable order, and instead it should be a stringified integer, describing the fee amount, always denominated in the sell token.
 
-## <mark style="color:blue;">Foreign Liquidity orders</mark>
+## Foreign Liquidity orders
 
 In order to allow solvers to build solutions that use additional liquidity orders, besides the ones contained in the input json, there is a "foreign\_liquidity\_orders" key that maps to a list of "orders", where each entry describes the liquidity order as well as the executed buy and sell amounts. This is a required field. An example entry is given below.
 
@@ -78,7 +78,7 @@ We now clarify the meaning of some of the entries above:
 
 As a final comment, and similar to the liquidity orders provided by the Driver, foreign liquidity orders are always matched at limit price and do not contribute surplus to the objective function. Moreover, a solution containing only (foreign) liquidity orders is not considered valid.
 
-## <mark style="color:blue;">Executed AMMs</mark>
+## Executed AMMs
 
 The "amms" key maps to a dictionary containing all the AMMs that were used in the solution, their order of execution, as well as the traded amounts, and it is a required field. More specifically, all the information from the input is copied to the output entry, and there is an additional `execution` key that maps to a list of AMM _executions_ (note that an AMM involving 4 or more tokens may be executed more than once). Each AMM execution has the following parameters:
 
@@ -88,7 +88,7 @@ The "amms" key maps to a dictionary containing all the AMMs that were used in th
 * `"exec_sell_amount"`: a stringified integer with the amount that the AMM sells.
 * `"exec_plan"`: this entry helps to specify the order in which the different AMM interactions are to be executed. It consists of two entries (which can be thought of as coordinates), `"position"` and `"sequence"`, that are non-negative integers, and a third boolean entry labeled `"internal"`; the `internal` flag is discussed in the section below. The reason that two entries/coordinates are used is to more precisely describe potential dependencies among AMM orders. In particular, two AMM orders that have a different `sequence` entry are independent and their relative order of execution does not matter. However, for all AMM orders with the same `sequence` entry, the order specified by the `position` entry must be respected, i.e., all such orders must be executed sequentially, in increasing order of the `position` entry.
 
-An example of a Constant Product AMM execution entry is given below<mark style="color:blue;">.</mark>
+An example of a Constant Product AMM execution entry is given below.
 
 {% code overflow="wrap" %}
 ```json
@@ -135,7 +135,7 @@ If both conditions are satisfied, a solver can set the `"internal"` flag to `tru
 
 In such a case, the driver will remove the interaction, and so the solution will end up using less gas, get better ranking, and also be risk-free (at least the part involving the internalized AMM interaction). We stress that the `exec_plan` coordinates must always be provided, even if the interaction will end up being internalized.
 
-## <mark style="color:blue;">Prices of the traded tokens</mark>
+## Prices of the traded tokens
 
 The "prices" key is a dictionary mapping each token id to its computed price in terms of the reference token, and it is a required field. Each price is an unsigned integer, and for scaling purposes, the numeraire is usually set to have a large enough value; usually, WETH is selected as the numeraire, which has 18 decimals, and so the price of 1 wei is set to 10¹⁸. We clarify here that this is arbitrary, and is just selected for convenience. We also stress that a solution need only contain prices for the tokens appearing in the executed user orders, and that solvers are free to choose the unit of measure they will use.
 
@@ -155,7 +155,7 @@ The above entries should be interpreted as follows:
 * The lowest denomination of USDC (1st entry), i.e., 1 / 10⁶ of USDC, has a price of 219193245742363509576247472 relative to the price of 10¹⁸ that wei has. This translates to 1 USDC having a price of $$\frac{219193245742363509576247472 \cdot 10^6}{10^{18} \cdot 10^{18}} \approx 0.000219193$$ WETH.
 * The lowest denomination of BAL (2nd entry) is 1 / 10¹⁸ , and it has a price of 5245932598960804 relative to the price of 10¹⁸ that wei has. This translates to 1 BAL having a price of $$\frac{5245932598960804 \cdot 10^{18}}{10^{18} \cdot 10^{18}} \approx 0.005245933$$ WETH.
 
-## <mark style="color:blue;">Approvals</mark>
+## Approvals
 
 In order to allow solvers to propose solutions that interact with contracts/pools that are not provided by the Driver, there are 2 additional sections in the solution file. The first is the "approvals" key and the second is the "interaction\_data" key (covered below). We clarify that both are required fields.
 
@@ -179,7 +179,7 @@ An example is given below.
 ]
 ```
 
-## <mark style="color:blue;">Interaction Data</mark>
+## Interaction Data
 
 In order to allow for more interactions (e.g., interacting with AMMs that are not provided by the Driver), the "interaction\_data" key (which is a required field) maps to a list of encoded interactions, each consisting of the following:
 
@@ -223,7 +223,7 @@ An example is given below.
 ]
 ```
 
-## <mark style="color:blue;">Score</mark>
+## Score
 
 The score is the "bid" a solver makes for the batch, as it will get ranked according to it. The protocol picks the solution with the highest score, given that it is strictly positive. More details about the meaning of the score can be found [here](solver-auction-and-rewards.md).\
 \

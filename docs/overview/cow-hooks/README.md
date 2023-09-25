@@ -4,7 +4,7 @@ description: Built on top of the existing on-chain settlement layer
 
 # CoW Hooks
 
-<figure><img src="../../.gitbook/assets/Cow-hooks.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../img/Cow-hooks.gif" alt="" /><figcaption></figcaption></figure>
 
 Following CoW Protocol roadmaps, we are excited to release a brand new and shiny feature: _CoW Hooks_. \
 \
