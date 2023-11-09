@@ -64,6 +64,10 @@
   * [How to write a solver](solvers/how-to-build-a-solver/how-to-write-a-solver.md)
   * [How to test a solver locally](solvers/how-to-build-a-solver/how-to-test-a-solver-locally.md)
 
+## WIDGET
+
+* [Get started](widget/get-started.md)
+
 ## Front End
 
 * [Introduction](front-end/introduction.md)
