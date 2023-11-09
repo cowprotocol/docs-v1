@@ -10,6 +10,8 @@ description: Bring reliable, MEV-protected swaps to your users
 >
 > **🛠️ Configurator**: [https://widget.cow.fi](https://widget.cow.fi) &#x20;
 
+<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+
 Integrate the CoW Swap widget to bring seamless, MEV-protected trading to your website or dApp. Delight your users while adding an extra revenue stream for your project - it's a win-win.
 
 ### Install
