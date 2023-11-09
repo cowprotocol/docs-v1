@@ -37,6 +37,7 @@
   * [Order Creation](smart-contracts/eth-flow-contract/order-creation.md)
   * [Order Execution](smart-contracts/eth-flow-contract/order-execution.md)
   * [Order Invalidation](smart-contracts/eth-flow-contract/order-cancellation.md)
+* [Programmatic Order Framework](smart-contracts/programmatic-order-framework.md)
 
 ## Off-Chain Services
 
