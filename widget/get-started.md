@@ -16,13 +16,32 @@ Integrate the CoW Swap widget to bring seamless, MEV-protected trading to your w
 
 ### Install
 
-```bash
-yarn add @cowprotocol/widget-lib
-```
+This library will work with any front-end technology. \
+There are three flavors/libraries of the widget you can choose from:
 
-```bash
-npm install @cowprotocol/widget-lib
-```
+*   **NPM-based Application**: If your application is React, it will be easier to inject the ready-to-use widget from this other alternative library:
+
+    ```typescript
+    npm install @cowprotocol/widget-lib
+    ```
+
+
+*   **React Applications:** If your application is React, it will be easier to inject the ready-to-use widget from this other alternative library:
+
+    ```typescript
+    npm install @cowprotocol/widget-react
+    ```
+
+
+*   **Pure HTML**: If your project doesn't use NPM, there's an easy way to include the widget. Make sure this is at the end of your `<head />` tag:
+
+    ```typescript
+    <script src="https://cdn.jsdelivr.net/npm/@cowprotocol/widget-lib@latest/index.iife.js"></script>
+    ```
+
+
+
+This tutorial assumes you continue with the **NPM-based** approach (`@cowprotocol/widget-lib` ), so if you choose the **React Application** or **Pure HTML**, although will be very similar, the easiest is to copy the snippets from [https://widget.cow.fi](https://widget.cow.fi/) and then continue with the configuration below.
 
 ### Quick start
 
